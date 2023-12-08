@@ -1,0 +1,291 @@
+{
+  "flow_runs": [
+    {
+      "run_id": "e4a212e8-ebd7-4ac1-8817-27c50f7a11f0_0",
+      "status": "Completed",
+      "error": null,
+      "inputs": {
+        "chat_history": [
+          {
+            "inputs": {
+              "question": "what is prompt engineering?"
+            },
+            "outputs": {
+              "answer": "Prompt engineering refers to the process of designing and implementing prompts or cues to guide individuals towards desired behaviors or actions. It involves the strategic use of prompts or cues to influence and shape people's behaviors in specific ways.\n\nPrompt engineering can be applied in various domains, such as education, health, and marketing. For example, in education, prompts can be used to remind students about upcoming assignments or to provide them with specific instructions on how to complete tasks. In health settings, prompts can be used to encourage individuals to engage in healthy behaviors, such as reminding them to take medication or to exercise regularly. In marketing, prompts can be used to influence consumer choices, such as by displaying prominent call-to-action buttons or providing limited-time offers.\n\nOverall, prompt engineering aims to leverage the power of cues or prompts to nudge individuals towards desired actions or behaviors, ultimately improving outcomes in various contexts."
+            }
+          },
+          {
+            "inputs": {
+              "question": "what's tooth cavity?"
+            },
+            "outputs": {
+              "answer": "A tooth cavity, also known as dental caries or tooth decay, is a common dental problem that occurs when the structure of a tooth is damaged or deteriorated due to bacterial activity. It is a result of a combination of factors, including poor oral hygiene, frequent consumption of sugary or acidic foods and drinks, and the presence of certain bacteria in the mouth.\n\nCavities typically begin as small holes or pits in the tooth's outer layer, known as enamel. If left untreated, the decay can progress deeper into the tooth, affecting the dentin and eventually reaching the innermost part of the tooth called the pulp. This can lead to tooth sensitivity, pain, infection, and even tooth loss if not addressed in a timely manner.\n\nCommon symptoms of tooth cavities include toothache, sensitivity to hot or cold temperatures, pain while chewing, visible holes or pits on the tooth surface, and discoloration. However, in the early stages, cavities may not cause any noticeable symptoms, which is why regular dental check-ups are important for early detection and treatment.\n\nPrevention and treatment of tooth cavities involve maintaining good oral hygiene practices, such as regular brushing, flossing, and using fluoride toothpaste, as well as limiting the consumption of sugary and acidic foods"
+            }
+          }
+        ],
+        "question": "what's your dental clinic address?"
+      },
+      "output": {
+        "answer": "I apologize for the confusion, but I am an AI assistant and do not have a physical location or a dental clinic. I am here to provide information and answer questions to the best of my abilities. If you are in need of a dental clinic, I recommend searching for local dental clinics in your area or consulting with your healthcare provider for recommendations."
+      },
+      "metrics": null,
+      "request": null,
+      "parent_run_id": "e4a212e8-ebd7-4ac1-8817-27c50f7a11f0",
+      "root_run_id": "e4a212e8-ebd7-4ac1-8817-27c50f7a11f0",
+      "source_run_id": null,
+      "flow_id": "template_chat_flow",
+      "start_time": "2023-11-28T22:52:06.959473Z",
+      "end_time": "2023-11-28T22:52:07.234514Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "AzureOpenAI.chat",
+          "type": "Tool",
+          "inputs": {
+            "prompt": "system:\nYou are a helpful assistant.\n\n{% for item in chat_history %}\nuser:\n{{item.inputs.question}}\nassistant:\n{{item.outputs.answer}}\n{% endfor %}\n\nuser:\n{{question}}",
+            "chat_history": [
+              {
+                "inputs": {
+                  "question": "what is prompt engineering?"
+                },
+                "outputs": {
+                  "answer": "Prompt engineering refers to the process of designing and implementing prompts or cues to guide individuals towards desired behaviors or actions. It involves the strategic use of prompts or cues to influence and shape people's behaviors in specific ways.\n\nPrompt engineering can be applied in various domains, such as education, health, and marketing. For example, in education, prompts can be used to remind students about upcoming assignments or to provide them with specific instructions on how to complete tasks. In health settings, prompts can be used to encourage individuals to engage in healthy behaviors, such as reminding them to take medication or to exercise regularly. In marketing, prompts can be used to influence consumer choices, such as by displaying prominent call-to-action buttons or providing limited-time offers.\n\nOverall, prompt engineering aims to leverage the power of cues or prompts to nudge individuals towards desired actions or behaviors, ultimately improving outcomes in various contexts."
+                }
+              },
+              {
+                "inputs": {
+                  "question": "what's tooth cavity?"
+                },
+                "outputs": {
+                  "answer": "A tooth cavity, also known as dental caries or tooth decay, is a common dental problem that occurs when the structure of a tooth is damaged or deteriorated due to bacterial activity. It is a result of a combination of factors, including poor oral hygiene, frequent consumption of sugary or acidic foods and drinks, and the presence of certain bacteria in the mouth.\n\nCavities typically begin as small holes or pits in the tooth's outer layer, known as enamel. If left untreated, the decay can progress deeper into the tooth, affecting the dentin and eventually reaching the innermost part of the tooth called the pulp. This can lead to tooth sensitivity, pain, infection, and even tooth loss if not addressed in a timely manner.\n\nCommon symptoms of tooth cavities include toothache, sensitivity to hot or cold temperatures, pain while chewing, visible holes or pits on the tooth surface, and discoloration. However, in the early stages, cavities may not cause any noticeable symptoms, which is why regular dental check-ups are important for early detection and treatment.\n\nPrevention and treatment of tooth cavities involve maintaining good oral hygiene practices, such as regular brushing, flossing, and using fluoride toothpaste, as well as limiting the consumption of sugary and acidic foods"
+                }
+              }
+            ],
+            "deployment_name": "gpt-35-turbo-dply",
+            "max_tokens": 256,
+            "question": "what's your dental clinic address?",
+            "temperature": 0.7,
+            "stream": true
+          },
+          "output": [],
+          "start_time": 1701229926.961471,
+          "end_time": 1701229927.232249,
+          "error": null,
+          "children": [
+            {
+              "name": "openai.api_resources.chat_completion.ChatCompletion.create",
+              "type": "LLM",
+              "inputs": {
+                "api_base": "https://aoai-openai-ws-srv.openai.azure.com/",
+                "api_type": "azure",
+                "api_version": "2023-10-01-preview",
+                "engine": "gpt-35-turbo-dply",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are a helpful assistant."
+                  },
+                  {
+                    "role": "user",
+                    "content": "what is prompt engineering?"
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "Prompt engineering refers to the process of designing and implementing prompts or cues to guide individuals towards desired behaviors or actions. It involves the strategic use of prompts or cues to influence and shape people's behaviors in specific ways.\n\nPrompt engineering can be applied in various domains, such as education, health, and marketing. For example, in education, prompts can be used to remind students about upcoming assignments or to provide them with specific instructions on how to complete tasks. In health settings, prompts can be used to encourage individuals to engage in healthy behaviors, such as reminding them to take medication or to exercise regularly. In marketing, prompts can be used to influence consumer choices, such as by displaying prominent call-to-action buttons or providing limited-time offers.\n\nOverall, prompt engineering aims to leverage the power of cues or prompts to nudge individuals towards desired actions or behaviors, ultimately improving outcomes in various contexts."
+                  },
+                  {
+                    "role": "user",
+                    "content": "what's tooth cavity?"
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "A tooth cavity, also known as dental caries or tooth decay, is a common dental problem that occurs when the structure of a tooth is damaged or deteriorated due to bacterial activity. It is a result of a combination of factors, including poor oral hygiene, frequent consumption of sugary or acidic foods and drinks, and the presence of certain bacteria in the mouth.\n\nCavities typically begin as small holes or pits in the tooth's outer layer, known as enamel. If left untreated, the decay can progress deeper into the tooth, affecting the dentin and eventually reaching the innermost part of the tooth called the pulp. This can lead to tooth sensitivity, pain, infection, and even tooth loss if not addressed in a timely manner.\n\nCommon symptoms of tooth cavities include toothache, sensitivity to hot or cold temperatures, pain while chewing, visible holes or pits on the tooth surface, and discoloration. However, in the early stages, cavities may not cause any noticeable symptoms, which is why regular dental check-ups are important for early detection and treatment.\n\nPrevention and treatment of tooth cavities involve maintaining good oral hygiene practices, such as regular brushing, flossing, and using fluoride toothpaste, as well as limiting the consumption of sugary and acidic foods"
+                  },
+                  {
+                    "role": "user",
+                    "content": "what's your dental clinic address?"
+                  }
+                ],
+                "temperature": 0.7,
+                "top_p": 1.0,
+                "n": 1,
+                "stream": true,
+                "stop": null,
+                "max_tokens": 256,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "logit_bias": {},
+                "user": ""
+              },
+              "output": [],
+              "start_time": 1701229926.964667,
+              "end_time": 1701229927.232249,
+              "error": null,
+              "children": null,
+              "node_name": null
+            }
+          ],
+          "node_name": "chat"
+        }
+      ],
+      "variant_id": "",
+      "name": "",
+      "description": "",
+      "tags": null,
+      "system_metrics": {
+        "duration": 0.275041,
+        "total_tokens": 481
+      },
+      "result": {
+        "answer": "I apologize for the confusion, but I am an AI assistant and do not have a physical location or a dental clinic. I am here to provide information and answer questions to the best of my abilities. If you are in need of a dental clinic, I recommend searching for local dental clinics in your area or consulting with your healthcare provider for recommendations."
+      },
+      "upload_metrics": false
+    }
+  ],
+  "node_runs": [
+    {
+      "node": "chat",
+      "flow_run_id": "e4a212e8-ebd7-4ac1-8817-27c50f7a11f0",
+      "run_id": "e4a212e8-ebd7-4ac1-8817-27c50f7a11f0_chat_0",
+      "status": "Completed",
+      "inputs": {
+        "prompt": "system:\nYou are a helpful assistant.\n\n{% for item in chat_history %}\nuser:\n{{item.inputs.question}}\nassistant:\n{{item.outputs.answer}}\n{% endfor %}\n\nuser:\n{{question}}",
+        "chat_history": [
+          {
+            "inputs": {
+              "question": "what is prompt engineering?"
+            },
+            "outputs": {
+              "answer": "Prompt engineering refers to the process of designing and implementing prompts or cues to guide individuals towards desired behaviors or actions. It involves the strategic use of prompts or cues to influence and shape people's behaviors in specific ways.\n\nPrompt engineering can be applied in various domains, such as education, health, and marketing. For example, in education, prompts can be used to remind students about upcoming assignments or to provide them with specific instructions on how to complete tasks. In health settings, prompts can be used to encourage individuals to engage in healthy behaviors, such as reminding them to take medication or to exercise regularly. In marketing, prompts can be used to influence consumer choices, such as by displaying prominent call-to-action buttons or providing limited-time offers.\n\nOverall, prompt engineering aims to leverage the power of cues or prompts to nudge individuals towards desired actions or behaviors, ultimately improving outcomes in various contexts."
+            }
+          },
+          {
+            "inputs": {
+              "question": "what's tooth cavity?"
+            },
+            "outputs": {
+              "answer": "A tooth cavity, also known as dental caries or tooth decay, is a common dental problem that occurs when the structure of a tooth is damaged or deteriorated due to bacterial activity. It is a result of a combination of factors, including poor oral hygiene, frequent consumption of sugary or acidic foods and drinks, and the presence of certain bacteria in the mouth.\n\nCavities typically begin as small holes or pits in the tooth's outer layer, known as enamel. If left untreated, the decay can progress deeper into the tooth, affecting the dentin and eventually reaching the innermost part of the tooth called the pulp. This can lead to tooth sensitivity, pain, infection, and even tooth loss if not addressed in a timely manner.\n\nCommon symptoms of tooth cavities include toothache, sensitivity to hot or cold temperatures, pain while chewing, visible holes or pits on the tooth surface, and discoloration. However, in the early stages, cavities may not cause any noticeable symptoms, which is why regular dental check-ups are important for early detection and treatment.\n\nPrevention and treatment of tooth cavities involve maintaining good oral hygiene practices, such as regular brushing, flossing, and using fluoride toothpaste, as well as limiting the consumption of sugary and acidic foods"
+            }
+          }
+        ],
+        "deployment_name": "gpt-35-turbo-dply",
+        "max_tokens": 256,
+        "question": "what's your dental clinic address?",
+        "temperature": 0.7,
+        "stream": true
+      },
+      "output": "<generator object generate_from_proxy at 0x000001B5DEA4B270>",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "e4a212e8-ebd7-4ac1-8817-27c50f7a11f0_0",
+      "start_time": "2023-11-28T22:52:06.961471Z",
+      "end_time": "2023-11-28T22:52:07.233492Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "AzureOpenAI.chat",
+          "type": "Tool",
+          "inputs": {
+            "prompt": "system:\nYou are a helpful assistant.\n\n{% for item in chat_history %}\nuser:\n{{item.inputs.question}}\nassistant:\n{{item.outputs.answer}}\n{% endfor %}\n\nuser:\n{{question}}",
+            "chat_history": [
+              {
+                "inputs": {
+                  "question": "what is prompt engineering?"
+                },
+                "outputs": {
+                  "answer": "Prompt engineering refers to the process of designing and implementing prompts or cues to guide individuals towards desired behaviors or actions. It involves the strategic use of prompts or cues to influence and shape people's behaviors in specific ways.\n\nPrompt engineering can be applied in various domains, such as education, health, and marketing. For example, in education, prompts can be used to remind students about upcoming assignments or to provide them with specific instructions on how to complete tasks. In health settings, prompts can be used to encourage individuals to engage in healthy behaviors, such as reminding them to take medication or to exercise regularly. In marketing, prompts can be used to influence consumer choices, such as by displaying prominent call-to-action buttons or providing limited-time offers.\n\nOverall, prompt engineering aims to leverage the power of cues or prompts to nudge individuals towards desired actions or behaviors, ultimately improving outcomes in various contexts."
+                }
+              },
+              {
+                "inputs": {
+                  "question": "what's tooth cavity?"
+                },
+                "outputs": {
+                  "answer": "A tooth cavity, also known as dental caries or tooth decay, is a common dental problem that occurs when the structure of a tooth is damaged or deteriorated due to bacterial activity. It is a result of a combination of factors, including poor oral hygiene, frequent consumption of sugary or acidic foods and drinks, and the presence of certain bacteria in the mouth.\n\nCavities typically begin as small holes or pits in the tooth's outer layer, known as enamel. If left untreated, the decay can progress deeper into the tooth, affecting the dentin and eventually reaching the innermost part of the tooth called the pulp. This can lead to tooth sensitivity, pain, infection, and even tooth loss if not addressed in a timely manner.\n\nCommon symptoms of tooth cavities include toothache, sensitivity to hot or cold temperatures, pain while chewing, visible holes or pits on the tooth surface, and discoloration. However, in the early stages, cavities may not cause any noticeable symptoms, which is why regular dental check-ups are important for early detection and treatment.\n\nPrevention and treatment of tooth cavities involve maintaining good oral hygiene practices, such as regular brushing, flossing, and using fluoride toothpaste, as well as limiting the consumption of sugary and acidic foods"
+                }
+              }
+            ],
+            "deployment_name": "gpt-35-turbo-dply",
+            "max_tokens": 256,
+            "question": "what's your dental clinic address?",
+            "temperature": 0.7,
+            "stream": true
+          },
+          "output": [],
+          "start_time": 1701229926.961471,
+          "end_time": 1701229927.232249,
+          "error": null,
+          "children": [
+            {
+              "name": "openai.api_resources.chat_completion.ChatCompletion.create",
+              "type": "LLM",
+              "inputs": {
+                "api_base": "https://aoai-openai-ws-srv.openai.azure.com/",
+                "api_type": "azure",
+                "api_version": "2023-10-01-preview",
+                "engine": "gpt-35-turbo-dply",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are a helpful assistant."
+                  },
+                  {
+                    "role": "user",
+                    "content": "what is prompt engineering?"
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "Prompt engineering refers to the process of designing and implementing prompts or cues to guide individuals towards desired behaviors or actions. It involves the strategic use of prompts or cues to influence and shape people's behaviors in specific ways.\n\nPrompt engineering can be applied in various domains, such as education, health, and marketing. For example, in education, prompts can be used to remind students about upcoming assignments or to provide them with specific instructions on how to complete tasks. In health settings, prompts can be used to encourage individuals to engage in healthy behaviors, such as reminding them to take medication or to exercise regularly. In marketing, prompts can be used to influence consumer choices, such as by displaying prominent call-to-action buttons or providing limited-time offers.\n\nOverall, prompt engineering aims to leverage the power of cues or prompts to nudge individuals towards desired actions or behaviors, ultimately improving outcomes in various contexts."
+                  },
+                  {
+                    "role": "user",
+                    "content": "what's tooth cavity?"
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "A tooth cavity, also known as dental caries or tooth decay, is a common dental problem that occurs when the structure of a tooth is damaged or deteriorated due to bacterial activity. It is a result of a combination of factors, including poor oral hygiene, frequent consumption of sugary or acidic foods and drinks, and the presence of certain bacteria in the mouth.\n\nCavities typically begin as small holes or pits in the tooth's outer layer, known as enamel. If left untreated, the decay can progress deeper into the tooth, affecting the dentin and eventually reaching the innermost part of the tooth called the pulp. This can lead to tooth sensitivity, pain, infection, and even tooth loss if not addressed in a timely manner.\n\nCommon symptoms of tooth cavities include toothache, sensitivity to hot or cold temperatures, pain while chewing, visible holes or pits on the tooth surface, and discoloration. However, in the early stages, cavities may not cause any noticeable symptoms, which is why regular dental check-ups are important for early detection and treatment.\n\nPrevention and treatment of tooth cavities involve maintaining good oral hygiene practices, such as regular brushing, flossing, and using fluoride toothpaste, as well as limiting the consumption of sugary and acidic foods"
+                  },
+                  {
+                    "role": "user",
+                    "content": "what's your dental clinic address?"
+                  }
+                ],
+                "temperature": 0.7,
+                "top_p": 1.0,
+                "n": 1,
+                "stream": true,
+                "stop": null,
+                "max_tokens": 256,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "logit_bias": {},
+                "user": ""
+              },
+              "output": [],
+              "start_time": 1701229926.964667,
+              "end_time": 1701229927.232249,
+              "error": null,
+              "children": null,
+              "node_name": null
+            }
+          ],
+          "node_name": "chat"
+        }
+      ],
+      "variant_id": "",
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "prompt_tokens": 481,
+        "completion_tokens": 0,
+        "total_tokens": 481,
+        "duration": 0.272021
+      },
+      "result": "<generator object generate_from_proxy at 0x000001B5DEA4B270>"
+    }
+  ]
+}

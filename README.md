@@ -1,57 +1,25 @@
-# Project Name
+# Responsible AI Prompt Flow Workshop
+In this lab, you’ll learn how to use Azure Prompt Flow to streamline the workflow for prompt engineering and expedite the process of using LLMs to build intelligent apps
 
-(short, 1-3 sentenced, description of the project)
 
-## Features
+## Learning Objectives
 
-This project framework provides the following features:
+By the end of the workshop you will learn how to:
 
-* Feature 1
-* Feature 2
-* ...
+1. Chat flow that takes input and produces output while keeping a dialog history.
+1. Take custom data (in csv file) and convert the data into tokenized embeddings with vector indexes.
+1. Use the LLM tool to create prompts and the response
+1. Use the embedding tool to the trained embeddings model to search the vector index
+1. Use the Python tool to create custom functions to preprocess data or call an API
+1. Use the Prompt tool to format the output response.
+
+## Prerequisites
+
+- Python environment (3.8 or higher)
+- Familiarity with Jupyter Notebooks
+- An Azure subscription
+- A GitHub account with access to GitHub Codespaces
 
 ## Getting Started
 
-### Prerequisites
-
-(ideally very short, if any)
-
-- OS
-- Library version
-- ...
-
-### Installation
-
-(ideally very short)
-
-- npm install [package name]
-- mvn install
-- ...
-
-### Quickstart
-(Add steps to get up and running quickly)
-
-1. git clone [repository clone url]
-2. cd [repository name]
-3. ...
-
-
-## Demo
-
-A demo app is included to show how to use the project.
-
-To run the demo, follow these steps:
-
-(Add steps to start up the demo)
-
-1.
-2.
-3.
-
-## Resources
-
-(Any additional resources or related projects)
-
-- Link to supporting information
-- Link to similar sample
-- ...
+[Click here](docs/README.md) to go to the step-by-step tutorial.

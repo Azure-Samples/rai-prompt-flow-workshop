@@ -1,0 +1,66 @@
+id: template_chat_flow
+name: Template Chat Flow
+environment:
+  python_requirements_txt: requirements.txt
+inputs:
+  chat_history:
+    type: list
+    default:
+    - inputs:
+        question: what's the dental office address
+      outputs:
+        line_number: 0
+        output: "The dental hospital is located at 157/F Nilgunj Road, Panihati,
+          Sodepur, Kolkata, Pin: 700114, West Bengal. (Source: faq-data.xls)"
+    is_chat_input: false
+    is_chat_history: true
+  question:
+    type: string
+    is_chat_input: true
+    default: what's the dental office address?
+outputs:
+  answer:
+    type: string
+    reference: ${prompt_answer.output}
+    is_chat_output: true
+nodes:
+- name: embed_question
+  type: python
+  source:
+    type: package
+    tool: promptflow.tools.embedding.embedding
+  inputs:
+    connection: AzureOpenAI-srv
+    input: ${inputs.question}
+    deployment_name: text-embedding-ada-002-dply
+- name: search_vector_index
+  type: python
+  source:
+    type: package
+    tool: promptflow_vectordb.tool.vector_index_lookup.VectorIndexLookup.search
+  inputs:
+    path: azureml://subscriptions/8a0f6419-1f4c-45b3-8d92-ee53be1ea443/resourcegroups/demoRG/workspaces/aml-ws/datastores/workspaceblobstore/paths/azureml/1ae60957-cc09-4e59-b29e-f5b5698dfacc/index/
+    query: ${embed_question.output}
+    top_k: 2
+  aggregation: false
+- name: format_prompt
+  type: prompt
+  source:
+    type: code
+    path: format_prompt.jinja2
+  inputs:
+    question: ${inputs.question}
+    chat_history: ${inputs.chat_history}
+    contexts: ${search_vector_index.output}
+- name: prompt_answer
+  type: llm
+  source:
+    type: code
+    path: prompt_answer.jinja2
+  inputs:
+    deployment_name: gpt-35-turbo-dply
+    max_tokens: 1000
+    text: ${format_prompt.output}
+  connection: AzureOpenAI-srv
+  api: chat
+  clconnection: AzOpenAI

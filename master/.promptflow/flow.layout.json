@@ -1,0 +1,81 @@
+{
+  "orientation": "Vertical",
+  "nodeLayouts": {
+    "inputs": {
+      "x": 33.06842008190662,
+      "y": -191.4611277673451,
+      "index": -1
+    },
+    "outputs": {
+      "x": 83.33334350585938,
+      "y": 982,
+      "index": -1
+    },
+    "modify_query_with_history": {
+      "x": -135.9973242509674,
+      "y": 77.81988456756625,
+      "height": 75,
+      "index": -1
+    },
+    "embed_the_question": {
+      "x": -134.2424152677544,
+      "y": 183.72509694006928,
+      "height": 75,
+      "index": -1
+    },
+    "search_question_from_indexed_docs": {
+      "x": -30.117815597113243,
+      "y": 311.27418677219964,
+      "height": 75,
+      "index": -1
+    },
+    "generate_prompt_context": {
+      "x": 12,
+      "y": 502,
+      "height": 75,
+      "index": -1
+    },
+    "Prompt_variants": {
+      "x": 44.5,
+      "y": 610.5,
+      "height": 75,
+      "index": -1
+    },
+    "answer_the_question_with_context": {
+      "x": 8.524350275618097,
+      "y": 733.8827523504092,
+      "height": 75,
+      "index": -1
+    },
+    "prompt_answer": {
+      "x": -13.888916015625,
+      "y": 169.4444580078125,
+      "index": 3
+    },
+    "format_prompt": {
+      "x": 127.77777099609375,
+      "y": 71.52774047851562,
+      "index": 2
+    },
+    "search_vector_index": {
+      "x": 140.27764892578125,
+      "y": -9.722244262695312,
+      "index": 1
+    },
+    "embed_question": {
+      "x": 180.55560302734375,
+      "y": -111.80555725097656,
+      "index": 0
+    }
+  },
+  "viewport": {
+    "transformMatrix": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ]
+  }
+}

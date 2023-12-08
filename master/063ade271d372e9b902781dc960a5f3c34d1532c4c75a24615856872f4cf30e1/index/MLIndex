@@ -1,0 +1,18 @@
+embeddings:
+  api_base: https://aoai-openai-ws-srv.openai.azure.com/
+  api_type: azure
+  api_version: 2023-10-01-preview
+  batch_size: '16'
+  connection:
+    id: /subscriptions/8a0f6419-1f4c-45b3-8d92-ee53be1ea443/resourceGroups/demoRG/providers/Microsoft.MachineLearningServices/workspaces/aml-ws/connections/aoai-openAI-ws-srv
+  connection_type: workspace_connection
+  deployment: text-embedding-ada-002-dply
+  dimension: 1536
+  file_format_version: '2'
+  kind: open_ai
+  model: gpt-35-turbo
+  schema_version: '2'
+index:
+  engine: langchain.vectorstores.FAISS
+  kind: faiss
+  method: FlatL2

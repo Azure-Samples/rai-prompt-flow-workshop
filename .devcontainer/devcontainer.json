@@ -1,0 +1,43 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.245.0/containers/python-3
+{
+	"name": "Python 3",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": ".."
+
+	},
+
+	"hostRequirements": {
+		"cpus": 8,
+		"memory": "4gb",
+		"storage": "64gb"
+	 },
+
+    "postCreateCommand": "conda init",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+		"settings": {
+                "python.defaultInterpreterPath": "/opt/conda/envs/py38_env"
+			},
+
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"ms-python.python",
+				"ms-python.pylance",
+				"donjayamanne.python-extension-pack",
+				"prompt-flow.prompt-flow",
+                "ms-toolsai.jupyter",
+				"GitHub.codespaces",
+				"ms-azuretools.vscode-docker",
+				"DavidAnson.vscode-markdownlint",
+				"ms-toolsai.vscode-ai"
+							]
+		}
+	}
+
+}

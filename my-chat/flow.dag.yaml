@@ -21,10 +21,10 @@ nodes:
     type: code
     path: chat.jinja2
   inputs:
-    deployment_name: ""
+    deployment_name: gptDply
     max_tokens: 256
     temperature: 0.7
     chat_history: ${inputs.chat_history}
     question: ${inputs.question}
-  connection: AzureOpenAIName
+  connection: openai-conn
   api: chat

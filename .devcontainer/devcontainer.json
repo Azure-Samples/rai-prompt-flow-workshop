@@ -22,7 +22,7 @@
 		"vscode": {
 			// Set *default* container specific settings.json values on container create.
 		"settings": {
-                "python.defaultInterpreterPath": "/opt/conda/envs/py38_env"
+                "python.defaultInterpreterPath": "/opt/conda/envs/py3_11_env"
 			},
 
 			// Add the IDs of extensions you want installed when the container is created.

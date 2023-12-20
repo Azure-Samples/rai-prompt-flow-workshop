@@ -86,9 +86,9 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
     }
     supportsHttpsTrafficOnly: true
     minimumTlsVersion: 'TLS1_2'
-    allowBlobPublicAccess: false
+    allowBlobPublicAccess: true
     networkAcls: {
-      defaultAction: 'Deny'
+      defaultAction: 'Allow'
     }
   }
 }

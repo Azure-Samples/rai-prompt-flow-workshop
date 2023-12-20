@@ -4,7 +4,7 @@ channels:
   - defaults
   - anaconda
 dependencies:
-  - python
+  - python=3.11
   - pip
   - pip:
     - ipykernel

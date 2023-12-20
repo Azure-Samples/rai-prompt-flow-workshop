@@ -31,7 +31,7 @@
 				"ms-python.pylance",
 				"donjayamanne.python-extension-pack",
 				"prompt-flow.prompt-flow",
-                "ms-toolsai.jupyter",
+                		"ms-toolsai.jupyter",
 				"GitHub.codespaces",
 				"ms-azuretools.vscode-docker",
 				"DavidAnson.vscode-markdownlint",

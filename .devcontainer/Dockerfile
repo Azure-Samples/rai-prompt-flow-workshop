@@ -2,7 +2,9 @@ FROM mcr.microsoft.com/devcontainers/miniconda:0-3
 # System packages 
 RUN apt-get update && apt-get install -y curl
 
-RUN apt update && apt install libpython3.11-dev
+RUN apt upgrade && add-apt-repository ppa:deadsnakes/ppa -y
+
+RUN apt update && apt install python3.11
 
 # needed for build_mlindex
 RUN apt update && apt install -y fuse

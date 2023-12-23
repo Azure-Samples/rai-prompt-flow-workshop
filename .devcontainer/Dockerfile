@@ -12,6 +12,8 @@ RUN apt update && apt install -y fuse
 # Install mamba
 RUN conda install -n base -c conda-forge mamba
 
+RUN conda install -y python=3.11
+
 #Choose your version of azcli
 RUN echo "pip install azure-cli" | bash
 #Choose your version of ml cli

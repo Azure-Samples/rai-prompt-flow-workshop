@@ -9,7 +9,7 @@ dependencies:
   - pip:
     - ipykernel
     - azureml-rag[faiss]>=0.1.11
-    - promptflow[azure]
+    - promptflow
     - promptflow-tools
     - promptflow-vectordb
     - azure-ai-ml
@@ -20,7 +20,7 @@ dependencies:
     - keyring>=4.1.1
     - keyrings.alt
     - pytest
-    - flask>=2.2.3
+    - flask
     - pymongo
 
     # Pinned dependencies

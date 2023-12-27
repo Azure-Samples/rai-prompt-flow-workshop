@@ -12,9 +12,9 @@ RUN apt update && apt install -y fuse
 # Install mamba
 RUN conda install -n base -c conda-forge mamba
 
-RUN conda install -y python=3.11 \
-    && pip install --no-cache-dir pipx \
-    && pipx reinstall-all
+# RUN conda install -y python=3.11 \
+#    && pip install --no-cache-dir pipx \
+#    && pipx reinstall-all
 
 #Choose your version of azcli
 RUN echo "pip install azure-cli" | bash

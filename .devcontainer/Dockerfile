@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y curl
 
 #RUN add-apt-repository ppa:deadsnakes/ppa -y
 
-RUN apt update && apt install libpython3.11-dev
+#RUN apt update && apt install libpython3.11-dev
 
 # needed for build_mlindex
 RUN apt update && apt install -y fuse

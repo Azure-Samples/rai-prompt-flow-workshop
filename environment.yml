@@ -10,7 +10,7 @@ dependencies:
     - ipykernel
     - openai==0.27.8
     - azureml-rag[faiss]>=0.1.11
-    - promptflow[azure] @https://azuremlsdktestpypi.blob.core.windows.net/repo/promptflow/promptflow-0.0.109137057-py3-none-any.whl
+    - promptflow[azure]>=1.2.0 
     - promptflow-tools==0.1.0.b5
     - promptflow-vectordb==0.1.2
     - azure-ai-ml
@@ -21,6 +21,7 @@ dependencies:
     - keyring>=4.1.1
     - keyrings.alt
     - pytest>=2.2.3
+    - pymongo
 
     # Pinned dependencies
     - azureml-inference-server-http

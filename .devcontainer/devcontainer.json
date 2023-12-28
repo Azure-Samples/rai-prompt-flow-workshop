@@ -22,7 +22,7 @@
 		"vscode": {
 			// Set *default* container specific settings.json values on container create.
 		"settings": {
-                "python.defaultInterpreterPath": "/opt/conda/envs/py310_env"
+                "python.defaultInterpreterPath": "/opt/conda/envs/py38_env"
 			},
 
 			// Add the IDs of extensions you want installed when the container is created.
@@ -31,7 +31,7 @@
 				"ms-python.pylance",
 				"donjayamanne.python-extension-pack",
 				"prompt-flow.prompt-flow",
-                		"ms-toolsai.jupyter",
+                "ms-toolsai.jupyter",
 				"GitHub.codespaces",
 				"ms-azuretools.vscode-docker",
 				"DavidAnson.vscode-markdownlint",

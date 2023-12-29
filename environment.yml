@@ -16,8 +16,6 @@ dependencies:
     - azure-ai-ml
     - azure-cli
     - azureml-core
-    - azureml-mlflow==1.53.0
-    - azure-ai-contentsafety
     - keyring>=4.1.1
     - keyrings.alt
     - pytest>=2.2.3

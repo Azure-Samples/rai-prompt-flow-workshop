@@ -23,8 +23,7 @@ param embeddingDeploymentName string
 @description('Specifies the workspace azureMLname of the deployment.')
 param azuremlName string
 
-@description('Specifies the name of the azureMLworkshop.')
-param workshopName string
+param workshopName string = 'workshop'
 
 @description('Specifies the location of the Azure Machine Learning workspace and dependent resources.')
 @allowed([
@@ -47,9 +46,6 @@ param workshopName string
   'westus'
   'westus2'
   'westeurope'
-  'usgovvirginia'
-  'southafricanorth'
-  'southafricawest'
 ])
 param location string
 

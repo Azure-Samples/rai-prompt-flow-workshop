@@ -13,11 +13,9 @@ param chatGptDeploymentCapacity int = 5
 param csExists bool = false
 param openaiExists bool = false
 
-@description('Display name of GPT-35-Turbo deployment')
-param gpt35TurboDeploymentName string
+param gpt35TurboDeploymentName string = 'gpt-35-turbo'
 
-@description('Display name of Text-Embedding-002 deployment')
-param embeddingDeploymentName string
+param embeddingDeploymentName string = 'text-embedding-ada-002'
 
 
 @description('Specifies the workspace azureMLname of the deployment.')

@@ -6,7 +6,6 @@ param contentsafetyName string
 
 param gpt35TurboModelName string = 'gpt-35-turbo'
 param textEmbeddingModelName string = 'text-embedding-ada-002'
-param chatGptModelVersion string = '0613'
 param embeddingDeploymentCapacity int = 5
 param chatGptDeploymentCapacity int = 5
 
@@ -46,6 +45,12 @@ param workshopName string = 'workshop'
   'westeurope'
 ])
 param location string
+
+param oldRegion array = [
+  'westeurope' 
+  'francecentral'
+  ]
+param chatGptModelVersion string = contains(oldRegion, location) ? '0301' : '0613' 
 
 
 var tenantId = subscription().tenantId

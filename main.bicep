@@ -210,6 +210,9 @@ output gptDeploymentName string =  gpt35TurboDeploymentName
 output textEmbedDeploymentName string = embeddingDeploymentName 
 
 output openAiApiEndpoint string = account1.properties.endpoint
+#disable-next-line outputs-should-not-contain-secrets
 output openAiApiKey string = account1.listKeys().key1
-output contentsafetyEndpoint string = contentsafetyaccount.properties.endpoint
+
+output contentsafetyEndpoint string = contentsafetyaccount.properties.endpoint 
+#disable-next-line outputs-should-not-contain-secrets
 output contentsafetyApiKey string = contentsafetyaccount.listKeys().key1

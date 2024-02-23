@@ -13,7 +13,6 @@ param csExists bool = false
 param openaiExists bool = false
 
 param gpt35TurboDeploymentName string = 'gpt-35-turbo'
-
 param embeddingDeploymentName string = 'text-embedding-ada-002'
 
 
@@ -26,18 +25,19 @@ param workshopName string = 'workshop'
 @allowed([
   'australiaeast'
   'brazilsouth'
-  'canadacentral'
+  'canadaeast'
   'centralus'
   'eastasia'
   'eastus'
   'eastus2'
   'francecentral'
   'japaneast'
-  'koreacentral'
   'northcentralus'
   'northeurope'
   'southeastasia'
   'southcentralus'
+  'switzerlandnorth'
+  'swedencentral'
   'uksouth'
   'westcentralus'
   'westus'
@@ -58,7 +58,7 @@ var storageAccountName = 'st${azuremlName}${workshopName}'
 var keyVaultName = 'kv-${azuremlName}-${workshopName}'
 var applicationInsightsName = 'appi-${azuremlName}-${workshopName}'
 var containerRegistryName = 'cr${azuremlName}${workshopName}'
-var workspaceName = 'aml-w${azuremlName}${workshopName}'
+//var workspaceName = 'aml-w${azuremlName}${workshopName}'
 var storageAccountId = storageAccount.id
 var keyVaultId = vault.id
 var applicationInsightId = applicationInsight.id
@@ -141,6 +141,7 @@ resource workspace 'Microsoft.MachineLearningServices/workspaces@2022-10-01' = {
   }
 }
 
+
 param oaSKU string = 'S0'
 resource account1 'Microsoft.CognitiveServices/accounts@2022-03-01' = if (!openaiExists) {
   name: openaiName
@@ -216,3 +217,4 @@ output openAiApiKey string = account1.listKeys().key1
 output contentsafetyEndpoint string = contentsafetyaccount.properties.endpoint 
 #disable-next-line outputs-should-not-contain-secrets
 output contentsafetyApiKey string = contentsafetyaccount.listKeys().key1
+#disable-next-line BCP334

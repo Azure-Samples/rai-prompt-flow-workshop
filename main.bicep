@@ -48,7 +48,7 @@ param chatGptModelVersion string = contains(oldRegion, location) ? '0301' : '061
 
 
 var tenantId = subscription().tenantId
-var storageAccountName = 'storeacct${workshopName}'
+var storageAccountName = 'storeacct${azuremlName}'
 var keyVaultName = 'kv-${azuremlName}-${workshopName}'
 var applicationInsightsName = 'appi-${azuremlName}-${workshopName}'
 var containerRegistryName = 'cr${azuremlName}${workshopName}'

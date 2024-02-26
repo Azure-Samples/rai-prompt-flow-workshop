@@ -60,7 +60,7 @@ filename=.env
 test -f $filename || touch $filename
 
 # write environment variable to file
-cat <<EOT >> .env
+cat <<EOT > .env
 AZURE_OPENAI_KEY=$AOAI_API_KEY
 AZURE_OPENAI_ENDPOINT=$AOAI_ENDPOINT_URL
 GPT_35_TURBO_DEPLOYMENT=$GPT_35_TURBO_DEPLOYMENT

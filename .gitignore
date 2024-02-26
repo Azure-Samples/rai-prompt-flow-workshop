@@ -97,6 +97,7 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
+*.env
 
 # Chutzpah Test files
 _Chutzpah*
@@ -146,6 +147,7 @@ _TeamCity*
 coverage*.json
 coverage*.xml
 coverage*.info
+config.json
 
 # Visual Studio code coverage results
 *.coverage

@@ -47,7 +47,7 @@ param chatGptModelVersion string = contains(oldRegion, location) ? '0301' : '061
 
 
 var tenantId = subscription().tenantId
-var storageAccountName = 'storeacct${azuremlName}'
+var storageAccountName = 'str${azuremlName}${workshopName}'
 var keyVaultName = 'kv-${azuremlName}-${workshopName}'
 var applicationInsightsName = 'appi-${azuremlName}-${workshopName}'
 var containerRegistryName = 'cr${azuremlName}${workshopName}'
@@ -203,6 +203,7 @@ output openAIServiceName string = openaiName
 output gptDeploymentName string =  gpt35TurboDeploymentName
 output textEmbedDeploymentName string = embeddingDeploymentName 
 
+
 output openAiApiEndpoint string = account1.properties.endpoint
 #disable-next-line outputs-should-not-contain-secrets
 output openAiApiKey string = account1.listKeys().key1
@@ -210,4 +211,6 @@ output openAiApiKey string = account1.listKeys().key1
 output contentsafetyEndpoint string = contentsafetyaccount.properties.endpoint 
 #disable-next-line outputs-should-not-contain-secrets
 output contentsafetyApiKey string = contentsafetyaccount.listKeys().key1
+
+output azureworkspace string = azuremlName
 #disable-next-line BCP334

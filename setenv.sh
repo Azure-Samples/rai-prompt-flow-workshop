@@ -1,7 +1,7 @@
 #!/bin/bash
 # name of resource group and deployment to link all resources together
 RESOURCE_GROUP=$(az config get --local defaults.group --query value --output tsv)
-AZURE_WORKSPACE=$(az config get --local defaults.workspace --query value --output tsv)
+# AZURE_WORKSPACE=$(az config get --local defaults.workspace --query value --output tsv)
 DEPLOYMENT_NAME=rai-workshop
 
 # Azure OpenAI API KEY
@@ -38,6 +38,16 @@ TEXT_EMBEDDING_DEPLOYMENT_NAME=$(az deployment group show  --resource-group $RES
 
 echo $TEXT_EMBEDDING_DEPLOYMENT_NAME
 
+
+# AZURE MACHINE LEARNING
+echo '------------------------------------------'
+echo 'Get AZURE MACHINE LEARNING NAME'
+
+AZURE_MACHINE_LEARNING_NAME=$(az deployment group show --resource-group $RESOURCE_GROUP --name $DEPLOYMENT_NAME  --query "properties.outputs.azureworkspace.value" -o tsv)
+$(az config Set --local defaults.workspace=$AZURE_MACHINE_LEARNING_NAME)
+echo $AZURE_MACHINE_LEARNING_NAME
+
+
 # Azure CONTENT SAFETY API ENDPOINT
 echo '------------------------------------------'
 echo 'Get CONTENT SAFETY API ENDPOINT'
@@ -67,6 +77,7 @@ GPT_35_TURBO_DEPLOYMENT=$GPT_35_TURBO_DEPLOYMENT
 TEXT_EMBEDDING_DEPLOYMENT_NAME=$TEXT_EMBEDDING_DEPLOYMENT_NAME
 AZURE_CONTENTSAFETY_ENDPOINT=$AZURE_CONTENTSAFETY_ENDPOINT
 AZURE_CONTENTSAFETY_KEY=$AZURE_CONTENTSAFETY_KEY
+AZURE_MACHINE_LEARNING_NAME=$AZURE_MACHINE_LEARNING_NAME
 EOT
 
 

@@ -1,3 +1,5 @@
+**UPDATE**: *This repository is archived effective July 1, 2024. For Responsible AI resources, visit [aka.ms/rai-collection](https://aka.ms/rai-collection).*
+
 # Responsible AI Prompt Flow Workshop
 In this lab, you’ll learn how to use Azure Prompt Flow to streamline the workflow for prompt engineering and expedite the process of using LLMs to build intelligent apps
 
